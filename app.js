@@ -14,7 +14,7 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const Router = require('./routes/index');
 
 // Initialise port
-const { PORT = 3000 } = process.env;
+const { PORT = 3000, DB_URL } = process.env;
 
 // Initialise app
 const app = express();
@@ -35,8 +35,6 @@ app.use(corsConfig);
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-const { DB_URL = 'mongodb://localhost:27017/movies' } = process.env;
 
 // MongoDB connect
 mongoose.connect(DB_URL, {
@@ -62,3 +60,5 @@ app.use(errorHandler);
 
 // Listen port
 app.listen(PORT);
+
+module.exports = app;
