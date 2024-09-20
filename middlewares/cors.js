@@ -2,8 +2,8 @@ const cors = require('cors');
 
 const corsConfig = cors({
   origin: [
-    'https://lovemovies.nomoredomains.sbs',
-    'http://lovemovies.nomoredomains.sbs',
+    'https://movies-explorer-frontend-two-vert.vercel.app',
+    'http://movies-explorer-frontend-two-vert.vercel.app',
   ],
   credentials: true,
   methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE'],
